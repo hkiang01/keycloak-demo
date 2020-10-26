@@ -50,7 +50,7 @@ ingress:
       paths:
       - /
   tls:
-   - secretName: keycloak-tls
+   - secretName: harrisonkiang-dot-com-wildcard-tls
      hosts:
        - keycloak.harrisonkiang.com
 

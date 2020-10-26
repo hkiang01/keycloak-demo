@@ -8,7 +8,7 @@ metadata:
 data:
     keycloak-gatekeeper.yaml: |
         # is the url for retrieve the OpenID configuration - normally the <server>/auth/realm/<realm_name>
-        discovery-url: http://keycloak.harrisonkiang.com/auth/realms/demo
+        discovery-url: https://keycloak.harrisonkiang.com/auth/realms/demo
         # the client id for the 'client' application
         client-id: demo
         # the secret associated to the 'client' application

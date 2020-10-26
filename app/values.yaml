@@ -50,7 +50,7 @@ ingress:
       paths:
       - /
   tls:
-   - secretName: app-tls
+   - secretName: harrisonkiang-dot-com-wildcard-tls
      hosts:
        - app.harrisonkiang.com
 
