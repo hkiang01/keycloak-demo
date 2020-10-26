@@ -1,14 +1,14 @@
-# Default values for keycloak.
+# Default values for app.
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
 
 replicaCount: 1
 
 image:
-  repository: quay.io/keycloak/keycloak
+  repository: nginx
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
-  tag: "11.0.2"
+  tag: ""
 
 imagePullSecrets: []
 nameOverride: ""
@@ -46,13 +46,13 @@ ingress:
     kubernetes.io/ingress.class: nginx
     kubernetes.io/tls-acme: "true"
   hosts:
-    - host: keycloak.harrisonkiang.com
+    - host: app.harrisonkiang.com
       paths:
       - /
-  tls: []
-  #  - secretName: chart-example-tls
-  #    hosts:
-  #      - chart-example.local
+  tls:
+   - secretName: app-tls
+     hosts:
+       - app.harrisonkiang.com
 
 resources: {}
   # We usually recommend not to specify default resources and to leave this as a conscious
@@ -78,13 +78,3 @@ nodeSelector: {}
 tolerations: []
 
 affinity: {}
-
-username: admin
-password: supersecretpassword
-
-postgresql:
-  postgresqlUsername: postgres
-  postgresqlPassword: secretpassword
-  postgresqlDatabase: keycloak
-  service:
-    port: 5432
