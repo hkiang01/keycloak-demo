@@ -1,3 +1,4 @@
+{{- $hosts := first .Values.ingress.hosts -}}
 apiVersion: v1
 kind: ConfigMap
 metadata:
@@ -23,7 +24,7 @@ data:
         # the location of a private key for TLS
         # tls-private-key:
         # the redirection url, essentially the site url, note: /oauth/callback is added at the end
-        redirection-url: http://app.harrisonkiang.com
+        redirection-url: http://{{ get $hosts "host"}}
         # the encryption key used to encode the session state
         encryption-key: "{{ randAlphaNum 32 }}"
         # the upstream endpoint which we should proxy request
