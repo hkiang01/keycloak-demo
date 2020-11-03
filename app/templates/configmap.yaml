@@ -8,11 +8,11 @@ metadata:
 data:
     keycloak-gatekeeper.yaml: |
         # is the url for retrieve the OpenID configuration - normally the <server>/auth/realm/<realm_name>
-        discovery-url: https://keycloak.harrisonkiang.com/auth/realms/demo
+        discovery-url: {{ .Values.keycloak.discoveryUrl }}
         # the client id for the 'client' application
-        client-id: demo
+        client-id: {{ .Values.keycloak.clientId }}
         # the secret associated to the 'client' application
-        # client-secret:
+        client-secret: {{ .Values.keycloak.clientSecret }}
         # enforces the cookie to be secure"`
         secure-cookie: false
         # the interface definition you wish the proxy to listen, all interfaces is specified as ':<port>', unix sockets as unix://<REL_PATH>|</ABS PATH>

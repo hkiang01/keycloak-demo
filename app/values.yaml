@@ -78,3 +78,8 @@ nodeSelector: {}
 tolerations: []
 
 affinity: {}
+
+keycloak:
+  clientId: app
+  clientSecret: 90a47b27-6de6-43e9-a300-4eb02f18b447
+  discoveryUrl: https://keycloak.harrisonkiang.com/auth/realms/demo
